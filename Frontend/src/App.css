@@ -1,0 +1,53 @@
+.App {
+  text-align: top;
+
+}
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.App-link {
+  color: #61dafb;
+}
+.layout{
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.menu-layout{
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.items{
+  border: gray 1px;
+  padding: 1em;
+  margin: 1em;
+}
+.card-width{
+  width: 18rem;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
