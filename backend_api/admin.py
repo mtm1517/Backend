@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Product, Catelogy, Shipping, Order, Rating
+from django.utils.html import format_html
 
 # Register your models here.
 #admin.site.register(Product)
@@ -8,6 +9,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ['title', 'price', 'id_catelogy', 'status']
     list_filter = ['id_catelogy']
     search_fields = ['title']
+
 
 admin.site.register(Catelogy)
 admin.site.register(Shipping)

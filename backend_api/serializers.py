@@ -19,9 +19,10 @@ class CatelogySerializer(serializers.ModelSerializer):
         model = Catelogy
         fields = ('id', 'title')
 class ProductSerializer(serializers.ModelSerializer):
+    id_catelogy = CatelogySerializer(many=False)
     class Meta:
         model = Product
-        fields = ('id', 'title', 'description', 'price','id_catelogy', 'status')
+        fields = ('id', 'title', 'description', 'price','image','id_catelogy', 'status')
 
 class ShippingSerializer(serializers.ModelSerializer):
     class Meta:
@@ -29,9 +30,13 @@ class ShippingSerializer(serializers.ModelSerializer):
         fields = ('id', 'tracking_number', 'status')
 
 class OrderSerializer(serializers.ModelSerializer):
+    id_shipping = ShippingSerializer(many=False)
+    id_user = UserSerializer(many=False)
+    id_product = ProductSerializer (many=True)
+
     class Meta:
         model = Order
-        fields = ('id', 'id_user', 'id_product', 'total_items', 'total_amount', 'id_shipping')
+        fields = ('id', 'id_user', 'total_items', 'total_amount', 'id_shipping', 'id_product')
 
 class RatingSerializer(serializers.ModelSerializer):
     class Meta:

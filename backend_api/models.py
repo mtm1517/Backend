@@ -1,8 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.utils.html import mark_safe
 
 # Create your models here.
+
+def upload_path(instance,filename):
+    return '/'.join(['covers', str(instance.title), filename])
 
 class Catelogy(models.Model):
     title = models.CharField(max_length=50)
@@ -14,9 +18,10 @@ class Product(models.Model):
     title = models.CharField(max_length=225)
     description = models.TextField(max_length=500)
     price = models.FloatField(default=0.0)
-    image = models.ImageField(upload_to='images/', default=None)
+    image = models.ImageField(upload_to=upload_path, blank=True, null=True)
     id_catelogy = models.ForeignKey(Catelogy, on_delete=models.CASCADE, default=None)
     status = models.BooleanField(default=True)
+
 
 
 
