@@ -36,6 +36,9 @@ export default function Login() {
         <Button block bsSize="small" type="submit">
           Login
         </Button>
+        <Button block bsSize="small" type="submit">
+          Sign Up
+        </Button>
       </form>
     </div>
   );
