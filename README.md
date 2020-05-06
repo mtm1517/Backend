@@ -1,6 +1,6 @@
 # HomeCook
 
-Download the files from https://github.com/mtm1517/Backend.git.
+Download the project files from https://github.com/mtm1517/Backend.git.
 
 This project was bootstrapped with Create React App.
 
