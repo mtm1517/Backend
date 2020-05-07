@@ -6,8 +6,15 @@ export default function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const dbRoute = 'mongodb://<myvu>:<Mtm151782>';
-
-
+  const {MongoClient} require('mongodb');
+  const client = new MongoClient(dbRoute)
+  try {
+    await client.connect();
+    await listDatabases(client);
+  } catch (error){
+    console.error(error)
+  }
+  await client.close(); 
 
 
   function Submit(event) {
